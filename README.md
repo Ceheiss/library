@@ -1,6 +1,7 @@
 # Instructions
 The Odin Project Library Challenge
 ## Javascript
+## FEATURE
 ## PROJECT: LIBRARY
 ## INTRODUCTION
 ## ASSIGNMENT
