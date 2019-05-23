@@ -1,7 +1,7 @@
 # Instructions
 The Odin Project Library Challenge
 ## Javascript
-## DEV FEATUREDDD
+## DEV FEATURED
 ## FEATURE
 ## PROJECT: LIBRARY
 ## INTRODUCTION
