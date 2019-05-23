@@ -1,12 +1,13 @@
 html{
-    background-color: #000000
+    background-color: #ececec;
 }
 
 .book{
-    display: inline;
+    display: inline-block;
     width: 300px;
     height: 400px;
     border-radius: 10px;
 }
 
 .book:nth-child(odd){ background-color: #8406be;}
+.book:nth-child(even){ background-color: #1c77ff;}
