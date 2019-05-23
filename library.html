@@ -10,6 +10,45 @@
     <script src='main.js'></script>
 </head>
 <body>
+
+    <!-- main container-->
+    <div id="container">
+             <!-- form-->
+            <div id="form"> 
+                <button id="new-book">NEW BOOK</button>
+                    <form id="insert-book">
+                        <p>
+                            <label for="title">Title</label> 
+                            <input type="text" name="title" id="title" required>
+                        </p>
+                         <p>
+                            <label for="author">Author</label> 
+                            <input type="text" name="author" id="author" required>
+                        </p>
+                        <p>  
+                            <label for="year">Year </label> 
+                            <input type ="number" id="year" value=0>
+                        </p>
+                        <p>
+                            <label for="read-it">Read it already?</label> 
+                            <input type="boolean" name="read-it" id="read-it" required placeholder="yes or no">
+                        </p>
+                        <p>
+                            <label for="rating">Rating</label> 
+                            <input type="text" name="rating" id=rating required>
+                        </p>
+                        <p>
+                            <input id="submit" type="submit" value="ADD BOOK">
+                         </p>
+                </form>   
+        </div>
+            <!-- Bookshelf display-->
+            <div id="bookshelf">  
+                <div class="book"></div>
+                <div class="book"></div>  
+                <div class="book"></div>    
+            </div>
+   </div>
     
 </body>
 </html>
