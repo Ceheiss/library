@@ -1,0 +1,12 @@
+html{
+    background-color: #000000
+}
+
+.book{
+    display: inline;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.book:nth-child(odd){ background-color: #8406be;}
