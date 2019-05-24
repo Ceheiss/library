@@ -1,5 +1,6 @@
 html{
-    background-color: #ececec;
+    background-color: #3a3a3a;
+    color: white;
 }
 
 #container{
@@ -18,13 +19,41 @@ html{
 #form{
     width: 300px;
     margin: 30px auto;
+    background-color: rgb(48, 47, 47);
+    border-radius: 20px;
+    
+}
+
+#insert-book{
+    padding: 10px 60px;
+}
+
+#insert-book .form-items{
+    border-radius: 20px;
+    border:none;
+    line-height: 25px;
+    width:100%;
+    text-align: center;
+}
+
+input:focus{outline:none;}
+
+#form h3{
+    background-color: #8406be;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 20px 0px;
+}
+
+#submit{
+    margin:10px;
 }
 
 #bookshelf{
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    
+
 }
 
 button, #submit {
