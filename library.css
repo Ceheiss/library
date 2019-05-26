@@ -31,6 +31,15 @@ h1{ font-family: 'Cinzel', serif;}
     width:100%;
 }
 
+/*place h2 on the right place */
+#place-h2-jumbo{
+    
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 61.1%;
+    margin-top: -100px;
+    width:100%;
+}
 
 #jumbotron h2 {
     display: flex;
@@ -40,15 +49,15 @@ h1{ font-family: 'Cinzel', serif;}
     text-align: center;
 }
 
-h2:before,
-h2:after {
+#jumbotron h2:before,
+#jumbotron h2:after {
     content: '';
     border-top: 2px solid;
     margin: 0 20px 0 0;
     flex: 1 0 20px;
 }
 
-h2:after {
+#jumbotron h2:after {
     margin: 0 0 0 20px;
 }
 
