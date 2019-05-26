@@ -3,7 +3,7 @@ body{
     color: white;
     margin:0 0;
 }
-
+/* Jumbotron style */
 #jumbotron{
  width: 100%;
  height:900px;
@@ -13,7 +13,6 @@ body{
  background-position: center center;
  background-size:cover;
  position: relative;
-
 }
 
 #jumbotron h1{
@@ -28,32 +27,31 @@ body{
     width:100%;
 }
 
+/* Page container style */
 #container{
     width: 90%;
     margin: 100px auto;
 }
 
+/* Book frame style */
 .book{
     height:300px;
     border-radius: 10px;
 }
-
-.book:nth-child(odd){ background-color: #b92afc;}
-.book:nth-child(even){ background-color: #389ed5;}
 
 #form{
     width: 300px;
     margin: 30px auto;
     background-color: rgb(48, 47, 47);
     border-radius: 20px;
-    display: none;
-    
+    display: none;   
 }
 
 #insert-book{
     padding: 10px 60px;
 }
 
+/* Insert round edges to book frames */
 #insert-book .form-items{
     border-radius: 20px;
     border:none;
@@ -72,17 +70,10 @@ input:focus{outline:none;}
     text-transform: uppercase;
 }
 
-#submit{
-    margin:10px;
-}
+/* Margin to submit button */
+#submit{ margin:10px; }
 
-#bookshelf{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-}
-
+/* Button's style */
 button, #submit {
     width: 130px;
     height: 40px;
@@ -100,8 +91,6 @@ button, #submit {
     text-indent: 5px;
     box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
     cursor: pointer;
-  
-  /* Just for presentation */  
     display: block;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -127,3 +116,14 @@ button, #submit {
     top: 0;
     border-radius: 0 5px 5px 0;  
   }
+
+/* Added grid to bookshelf*/
+#bookshelf{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Book frame color by odd and even */
+.book:nth-child(odd){ background-color: #b92afc;}
+.book:nth-child(even){ background-color: #389ed5;}
