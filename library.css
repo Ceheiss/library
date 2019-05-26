@@ -40,6 +40,10 @@ h1, h2{ font-family: 'Cinzel', serif;}
     width:100%;
 }
 
+#place-h2-jumbo p{
+    letter-spacing: 5px;
+    text-align: center;
+}
 #jumbotron h2 {
     font-size: 25px;
     display: flex;
@@ -60,7 +64,6 @@ h1, h2{ font-family: 'Cinzel', serif;}
 #jumbotron h2:after {
     margin: 0 0 0 20px;
 }
-
 
 /* Page container style */
 #container{
