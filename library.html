@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name = "Welcome to your personal bookshelf. Here you can find a collection of your favourite books">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Library</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='library.css'>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <!-- main container-->
+    <div id="jumbotron">
+             <h1>cloudLib</h1>
+        <div id="place-h2-jumbo">  
+             <h2> Your digital bookshelf - Everywhere </h2>  
+             <p><i class="fab fa-github"></i> <i class="fab fa-codepen"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></p>
+        </div>
+    </div>
+
+    <!-- Slide toogle button-->
+    <div id="container">
+            <button id="new-book">NEW BOOK</button>
+             <!-- form-->
+            <div id="form"> 
+                    <h3> Insert Book details</h3>
+                    <form id="insert-book">
+                        <p>
+                            <label for="title">Title</label>
+                        </p>
+                        <p>
+                            <input type="text" name="title" class="form-items" id="title" required>
+                        </p>
+                         <p>
+                            <label for="author">Author</label> 
+                        </p>
+                        <p>
+                            <input type="text" name="author" class="form-items" id="author" required>
+                        </p>
+                        <p>  
+                            <label for="year">Year </label> 
+                        </p>
+                        <p>
+                            <input type ="number" class="form-items" id="year">
+                        </p>
+                        <p>
+                            <label for="read-it">Read it already?</label> 
+                        </p>
+                        <p>
+                            <input type="boolean" name="read-it" class="form-items" id="read-it" required placeholder="yes or no">
+                        </p>
+                        <p>
+                            <label for="rating">Rating</label> 
+                        </p>
+                        <p>
+                            <input type="text" name="rating" class="form-items" id=rating required>
+                        </p>
+                        <p>
+                            <input id="submit" type="submit" value="ADD BOOK">
+                         </p>
+                </form>   
+        </div>
+             <h3> Your Books: </h3>
+            <!-- Bookshelf display-->
+            <div id="bookshelf">  
+                <div class="book"></div>
+                <div class="book"></div>  
+                <div class="book"></div> 
+                <div class="book"></div>       
+            </div>
+   </div>
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src='library.js'></script> 
+</body>
+</html>

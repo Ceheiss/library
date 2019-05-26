@@ -1,0 +1,184 @@
+body{
+    background-color: #1b1b1c;
+    color: white;
+    margin:0 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Added h1 style */
+h1, h2{ font-family: 'Cinzel', serif;}
+h1, i{ color: #ff4532;}
+
+/* Jumbotron style */
+#jumbotron{
+ width: 100%;
+ height:900px;
+ background-attachment: fixed;
+ background-image: url("images/books-bg.jpg");
+ background-repeat: no-repeat;
+ background-position: center center;
+ background-size:cover;
+ position: relative;
+}
+
+#jumbotron h1{
+    font-size: 4em;
+    background-color: rgba(0, 0, 0, 0.7);
+    line-height: 100px;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    margin-top: -100px;
+    width:100%;
+}
+
+/*place h2 on the right place */
+#place-h2-jumbo{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 56.1%;
+    margin-top: -100px;
+    width:100%;
+}
+
+#place-h2-jumbo p{
+    letter-spacing: 5px;
+    text-align: center;
+}
+#jumbotron h2 {
+    font-size: 25px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#jumbotron h2:before,
+#jumbotron h2:after {
+    content: '';
+    border-top: 2px solid;
+    margin: 0 20px 0 0;
+    flex: 1 0 20px;
+}
+
+#jumbotron h2:after {
+    margin: 0 0 0 20px;
+}
+
+/* Page container style */
+#container{
+    width: 90%;
+    margin: 100px auto;
+}
+
+#form{
+    width: 300px;
+    margin: 30px auto;
+    background-color: rgb(48, 47, 47);
+    border-radius: 20px;
+    display: none;   
+}
+
+#insert-book{
+    padding: 10px 60px;
+}
+
+/* Insert round edges to book frames */
+#insert-book .form-items{
+    border-radius: 20px;
+    border:none;
+    line-height: 25px;
+    width:100%;
+    text-align: center;
+}
+
+input:focus{outline:none;}
+
+#form h3{
+    background-color: #c23626;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 20px 0px;
+    text-transform: uppercase;
+}
+
+/* Margin to submit button */
+#submit{ margin:10px; }
+
+/* Button's style */
+button, #submit {
+    width: 130px;
+    height: 40px;
+    background: linear-gradient(to bottom, #ff4532 0%,#c23626 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    border-bottom: 4px solid #c23626;
+    color: #fbfbfb;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+    font-size: 15px;
+    text-align: left;
+    text-indent: 5px;
+    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  button:active, #submit:active {
+    box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+    top: 1px;
+  }
+  
+  button:after, #submit:after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 20px solid #ff4532;
+    border-bottom: 20px solid #ff4532;
+    border-left: 16px solid transparent;
+    border-right: 20px solid #ff4532;
+    position: absolute;
+    opacity: 0.6; 
+    right: 0;
+    top: 0;
+    border-radius: 0 5px 5px 0;  
+  }
+
+/* Book frame style */
+.book{
+    height:550px;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+}
+
+/* Added grid to bookshelf*/
+#bookshelf{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* Book frame color by odd and even */
+.book{ background-color: #c23626;}
+
+
+.book:nth-child(1), .book:nth-child(2), .book:nth-child(3), .book:nth-child(4){
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 300px 500px;
+}
+
+.book:nth-child(1){ background-image: url("images/dorian.jpg");}
+.book:nth-child(2){ background-image: url("images/flatland.jpeg");}
+.book:nth-child(3){ background-image: url("images/cosmos.jpg");}
+.book:nth-child(4){ background-image: url("images/got.jpg");}
+
+.show-book{
+    opacity: 1;
+}
