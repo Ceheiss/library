@@ -153,13 +153,15 @@ button, #submit {
 /* Book frame style */
 .book{
     height:550px;
+    transition: all 1s ease-in-out;
+    opacity: 0;
 }
 
 /* Added grid to bookshelf*/
 #bookshelf{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 /* Book frame color by odd and even */
@@ -170,10 +172,13 @@ button, #submit {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 300px 500px;
-    
 }
 
 .book:nth-child(1){ background-image: url("images/dorian.jpg");}
 .book:nth-child(2){ background-image: url("images/flatland.jpeg");}
 .book:nth-child(3){ background-image: url("images/cosmos.jpg");}
 .book:nth-child(4){ background-image: url("images/got.jpg");}
+
+.show-book{
+    opacity: 1;
+}
