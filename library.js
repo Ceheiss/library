@@ -37,3 +37,43 @@ var iteration = 0;
               }
 });
 
+/* ===============  Library ======================= */
+
+function Book (title, author, year, numberOfPages, rating, isRead) {
+  this.title = title;
+  this.author = author;
+  this.year = year;
+  this.numberOfPages = numberOfPages;
+  this.rating = rating;
+  this.isRead = isRead;
+}
+
+let myLibrary = [];
+
+let asoiaf = new Book ("A Song of Ice and Fire", "George R.R. Martin", 1992, 1023, 5, true);
+
+myLibrary.push(asoiaf)
+
+
+// Create an object constructor
+// With the information obtained from the form, add it to the database
+// link on submit button
+
+let bookTitle = document.getElementById("title");
+let bookAuthor = document.getElementById("author");
+let bookYear = document.getElementById("year");
+let bookPages = document.getElementById("pages");
+let bookRating = document.getElementById("rating");
+let bookIsRead = document.getElementById("read-it");
+let submitForm = document.getElementById("submit");
+
+function addBook (){
+  var book = new Book (bookTitle.value, bookAuthor.value, bookYear.value, bookPages.value, bookRating.value, bookIsRead.value)
+  alert(book.title);
+  alert(book.author);
+  alert(book.year);
+  alert(book.numberOfPages);
+  alert(book.rating);
+  alert(book.isRead);
+  return book
+}

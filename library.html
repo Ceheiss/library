@@ -24,46 +24,52 @@
 
     <!-- Slide toogle button-->
     <div id="container">
-            <button id="new-book">NEW BOOK</button>
+        <button id="new-book">NEW BOOK</button>
              <!-- form-->
-            <div id="form"> 
-                    <h3> Insert Book details</h3>
-                    <form id="insert-book">
-                        <p>
-                            <label for="title">Title</label>
-                        </p>
-                        <p>
-                            <input type="text" name="title" class="form-items" id="title" required>
-                        </p>
-                         <p>
-                            <label for="author">Author</label> 
-                        </p>
-                        <p>
-                            <input type="text" name="author" class="form-items" id="author" required>
-                        </p>
-                        <p>  
-                            <label for="year">Year </label> 
-                        </p>
-                        <p>
-                            <input type ="number" class="form-items" id="year">
-                        </p>
-                        <p>
-                            <label for="read-it">Read it already?</label> 
-                        </p>
-                        <p>
-                            <input type="boolean" name="read-it" class="form-items" id="read-it" required placeholder="yes or no">
-                        </p>
-                        <p>
-                            <label for="rating">Rating</label> 
-                        </p>
-                        <p>
-                            <input type="text" name="rating" class="form-items" id=rating required>
-                        </p>
-                        <p>
-                            <input id="submit" type="submit" value="ADD BOOK">
-                         </p>
-                </form>   
-        </div>
+          <div id="form" onSubmit=addBook()> 
+            <h3> Insert Book details</h3>
+            <form id="insert-book">
+                  <div class="form-section">
+                      <label for="title">Title</label>
+                  </div>
+                  <div class="form-section">
+                      <input type="text" name="title" class="form-items" id="title" required>
+                  </div>
+                  <div class="form-section">
+                      <label for="author">Author</label> 
+                  </div>
+                  <div class="form-section">
+                      <input type="text" name="author" class="form-items" id="author" required>
+                  </div>
+                  <div class="form-section">  
+                      <label for="year">Year </label> 
+                  </div>
+                  <div class="form-section">
+                      <input type ="number" class="form-items" id="year">
+                  </div>
+                  <div class="form-section">  
+                      <label for="pages">Number of pages </label> 
+                  </div>
+                  <div class="form-section">
+                      <input type ="number" class="form-items" id="pages">
+                  </div>
+                  <div class="form-section">
+                      <label for="read-it">Read it already?</label> 
+                  </div>
+                  <div class="form-section">
+                      <input type="boolean" name="read-it" class="form-items" id="read-it" required placeholder="yes or no">
+                  </div>
+                  <div class="form-section">
+                      <label for="rating">Rating</label> 
+                  </div>
+                  <div class="form-section">
+                      <input type="number" name="rating" class="form-items" id=rating required>
+                  </div>
+                  <div class="form-section">
+                      <input id="submit" type="submit" value="ADD BOOK">
+                  </div>
+            </form>   
+          </div>
              <h3> Your Books: </h3>
             <!-- Bookshelf display-->
             <div id="bookshelf">  
