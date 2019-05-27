@@ -66,13 +66,23 @@ const inputPages = document.getElementById("inp-pages");
 const inputRead = document.getElementById("inp-read");
 const inputRate = document.getElementById("inp-rate");
 const btnInsert = document.getElementById("btn-insert");
+const temporaryBooks = document.getElementById("temporary-books");
 
 
 function addBook () {
-  let book = new Book (inputTitle.value, inputAuthor.value)
-  myLibrary.push(book)
-  return myLibrary
+  let book = new Book (inputTitle.value, inputAuthor.value);
+  myLibrary.push(book);
+  // to reset it
+  temporaryBooks.innerHTML = "";
+  printBooks();
+  return myLibrary;
 };
+
+function printBooks() {
+  myLibrary.forEach(function(book){
+    temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year} <br />`
+  })
+}
 
 btnInsert.onclick = addBook;
 
