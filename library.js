@@ -59,21 +59,20 @@ myLibrary.push(asoiaf)
 // With the information obtained from the form, add it to the database
 // link on submit button
 
-let bookTitle = document.getElementById("title");
-let bookAuthor = document.getElementById("author");
-let bookYear = document.getElementById("year");
-let bookPages = document.getElementById("pages");
-let bookRating = document.getElementById("rating");
-let bookIsRead = document.getElementById("read-it");
-let submitForm = document.getElementById("submit");
+const inputTitle = document.getElementById("inp-title");
+const inputAuthor = document.getElementById("inp-author");
+const inputYear = document.getElementById("inp-year");
+const inputPages = document.getElementById("inp-pages");
+const inputRead = document.getElementById("inp-read");
+const inputRate = document.getElementById("inp-rate");
+const btnInsert = document.getElementById("btn-insert");
 
-function addBook (){
-  var book = new Book (bookTitle.value, bookAuthor.value, bookYear.value, bookPages.value, bookRating.value, bookIsRead.value)
-  alert(book.title);
-  alert(book.author);
-  alert(book.year);
-  alert(book.numberOfPages);
-  alert(book.rating);
-  alert(book.isRead);
-  return book
-}
+
+function addBook () {
+  let book = new Book (inputTitle.value, inputAuthor.value)
+  myLibrary.push(book)
+  return myLibrary
+};
+
+btnInsert.onclick = addBook;
+
