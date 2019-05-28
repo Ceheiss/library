@@ -3,7 +3,7 @@
 
 $(document).ready(function(){
     
-    var getNewBook = $("#new-book");
+    let getNewBook = $("#new-book");
     
     //Toggle bookshelf 
     getNewBook.on('click', function(){
@@ -15,11 +15,11 @@ $(document).ready(function(){
 $(window).scroll(function(e){
 
  // This variable is very important as it tracks the window's scrollTop(); position and all animations are triggered based on this value
- var scrollTop = $(this).scrollTop();
+let scrollTop = $(this).scrollTop();
 
  // Book list array
-var bookList = document.querySelectorAll(".book");
-var iteration = 0;
+let bookList = document.querySelectorAll(".book");
+let iteration = 0;
 
 		// Added this variable as a control method as somethimes the offset().top was set to 0 randomly and would conflict with scrollTop, because scrollTop > 0
 		if($('#bookshelf').offset().top !=0){
@@ -55,9 +55,6 @@ let myLibrary = [];
 let asoiaf = new Book ("A Song of Ice and Fire", "George R.R. Martin", "1992", "1023", "5", "true");
 myLibrary.push(asoiaf)
 
-// Create an object constructor
-// With the information obtained from the form, add it to the database
-// link on submit button
 
 // This is getting access to all the relevant elements
 const inputTitle = document.getElementById("inp-title");
@@ -103,10 +100,16 @@ function cleanInputs () {
   inputTitle.value = "";
   inputAuthor.value = "";
   inputYear.value = "";
-  inputPages.value = ""
-  inputRead.value = ""
-  inputRate.value = ""
+  inputPages.value = "";
+  inputRate.value = "";
+  inputRead.checked = true;
 }
 
 btnInsert.onclick = addBook;
 
+/*=== 
+Now we have the value wired, next we need to display each book in the format Ricardo coded below.
+We will have to create an element for each book in the array to display it and find a way for it to display information when hovering.
+We need to buttons in each book, one to toggle whether is read or not (that can change over time) and the second is to erase the book from the visuals and the library.
+Once we have everything working properly, a cool add-on would be to manage data using localStorage or Firebase (I've used localStorage, frebase no idea).
+===*/
