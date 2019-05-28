@@ -37,8 +37,9 @@ var iteration = 0;
               }
 });
 
-/* ===============  Library ======================= */
+/* ===============  Library Functionality ======================= */
 
+// Book generator
 function Book (title, author, year, numberOfPages, rating, isRead) {
   this.title = title;
   this.author = author;
@@ -50,15 +51,15 @@ function Book (title, author, year, numberOfPages, rating, isRead) {
 
 let myLibrary = [];
 
+// Simple example to have dummy data
 let asoiaf = new Book ("A Song of Ice and Fire", "George R.R. Martin", 1992, 1023, 5, true);
-
 myLibrary.push(asoiaf)
-
 
 // Create an object constructor
 // With the information obtained from the form, add it to the database
 // link on submit button
 
+// This is getting access to all the relevant elements
 const inputTitle = document.getElementById("inp-title");
 const inputAuthor = document.getElementById("inp-author");
 const inputYear = document.getElementById("inp-year");
@@ -68,20 +69,33 @@ const inputRate = document.getElementById("inp-rate");
 const btnInsert = document.getElementById("btn-insert");
 const temporaryBooks = document.getElementById("temporary-books");
 
-
+// This function generates a new element to go in the list of books
 function addBook () {
-  let book = new Book (inputTitle.value, inputAuthor.value);
+  let book = new Book (inputTitle.value, inputAuthor.value, inputYear.value);
   myLibrary.push(book);
   // to reset it
-  temporaryBooks.innerHTML = "";
+  cleanInputs();
   printBooks();
   return myLibrary;
 };
 
+// This prints a list of books in library
 function printBooks() {
   myLibrary.forEach(function(book){
     temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year} <br />`
   })
+}
+
+// This function is to clean the input boxes without refreshing the page
+// and also erase previous list so it's no replicated constantly
+function cleanInputs () {
+  temporaryBooks.innerHTML = "";
+  inputTitle.value = "";
+  inputAuthor.value = "";
+  inputYear.value = "";
+  inputPages.value = ""
+  inputRead.value = ""
+  inputRate.value = ""
 }
 
 btnInsert.onclick = addBook;
