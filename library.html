@@ -26,15 +26,34 @@
     <div id="container">
         <button id="new-book">NEW BOOK</button>
              <!-- form-->
-          <fieldset>
+          <fieldset id="form">
             <legend>Add Book</legend>
-              <input id="inp-title" type="text" placeholder="enter book title">
-              <input id="inp-author" type="text" placeholder="enter book author">
-              <input id="inp-year" type="number" placeholder="enter year">
-              <input id="inp-pages" type="number" placeholder="number of pages">
-              <input id="inp-read" type="text" placeholder="read it yet?">
-              <input id="inp-rate" type="number" placeholder="rate it">
+            <div  id="insert-book">
+              <div>
+                <input id="inp-title" type="text" placeholder="enter book title" class="form-items" required>
+              </div>
+              <div>
+                <input id="inp-author" type="text" placeholder="enter book author" class="form-items" required>
+              </div>
+              <div>
+                <input id="inp-year" type="number" placeholder="enter year" class="form-items">
+              </div>
+              <div>
+                <input id="inp-pages" type="number" placeholder="number of pages" class="form-items">
+              </div>
+             <div>
+                <input id="inp-rate" type="number" placeholder="rate it" class="form-items" min="1" max="5" required> 
+             </div>
+             <div>
+              <input id="inp-image" type="text" placeholder="enter book image url" class="form-items">
+             </div>
+             <div class="form-items">
+              <input type="checkbox" id="inp-read" name="read"
+                       checked>
+              <label for="inp-read">I have read the book</label>
+              </div>
               <button type="button" id="btn-insert">Insert Data</button>
+            </div>
           </fieldset>
              <h3> Your Books: </h3>
              <p id="temporary-books"></p>

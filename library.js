@@ -52,7 +52,7 @@ function Book (title, author, year, numberOfPages, rating, isRead) {
 let myLibrary = [];
 
 // Simple example to have dummy data
-let asoiaf = new Book ("A Song of Ice and Fire", "George R.R. Martin", 1992, 1023, 5, true);
+let asoiaf = new Book ("A Song of Ice and Fire", "George R.R. Martin", "1992", "1023", "5", "true");
 myLibrary.push(asoiaf)
 
 // Create an object constructor
@@ -66,12 +66,18 @@ const inputYear = document.getElementById("inp-year");
 const inputPages = document.getElementById("inp-pages");
 const inputRead = document.getElementById("inp-read");
 const inputRate = document.getElementById("inp-rate");
+const inputImage = document.getElementById("inp-image");
 const btnInsert = document.getElementById("btn-insert");
 const temporaryBooks = document.getElementById("temporary-books");
 
 // This function generates a new element to go in the list of books
 function addBook () {
-  let book = new Book (inputTitle.value, inputAuthor.value, inputYear.value);
+  if (inputRead.checked){
+    inputRead.value = true;
+  } else {
+    inputRead.value = false;
+  }
+  let book = new Book (inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, inputRate.value, inputRead.value);
   myLibrary.push(book);
   // to reset it
   cleanInputs();
@@ -82,7 +88,11 @@ function addBook () {
 // This prints a list of books in library
 function printBooks() {
   myLibrary.forEach(function(book){
-    temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year} <br />`
+    if (book.isRead == "true") {
+      temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year}  === HAVE READ IT<br />`
+    } else {
+      temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year}  ==== NOT READ YET<br />`
+    }
   })
 }
 
