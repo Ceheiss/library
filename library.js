@@ -66,6 +66,7 @@ const inputRate = document.getElementById("inp-rate");
 const inputImage = document.getElementById("inp-image");
 const btnInsert = document.getElementById("btn-insert");
 const temporaryBooks = document.getElementById("temporary-books");
+const bookshelf = document.getElementById("bookshelf");
 
 // This function generates a new element to go in the list of books
 function addBook () {
@@ -78,7 +79,9 @@ function addBook () {
   myLibrary.push(book);
   // to reset it
   cleanInputs();
+  cleanBookshelf();
   printBooks();
+  addElement();
   return myLibrary;
 };
 
@@ -107,6 +110,25 @@ function cleanInputs () {
 
 btnInsert.onclick = addBook;
 
+// Create div element, assign it the "book" class and add the html content. append to bookshelf
+function addElement(){
+  myLibrary.forEach(function(book){
+    let content = `Title: ${book.title} Author: ${book.author} Year: ${book.year}`;
+    const bookDiv = document.createElement("div");
+    bookDiv.className = "book";
+    bookDiv.innerHTML = content;
+    // const button = document.createElement("button");
+    // bookDiv.appendChild(button);
+    bookshelf.appendChild(bookDiv);
+  })
+}
+
+// Destroys all elements that are child of bookshelf (all books)
+function cleanBookshelf () {
+  while (bookshelf.firstChild) {
+    bookshelf.removeChild(bookshelf.firstChild);
+  } 
+}
 /*=== 
 Now we have the value wired, next we need to display each book in the format Ricardo coded below.
 We will have to create an element for each book in the array to display it and find a way for it to display information when hovering.
