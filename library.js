@@ -147,5 +147,6 @@ Now we have the value wired, next we need to display each book in the format Ric
 We will have to create an element for each book in the array to display it and find a way for it to display information when hovering.
 We need to buttons in each book, one to toggle whether is read or not (that can change over time) and the second is to erase the book from the visuals and the library.
 Once we have everything working properly, a cool add-on would be to manage data using localStorage or Firebase (I've used localStorage, frebase no idea).
-HANDLE ERROR IF NO PICTURE
+Because this is not really a form, we should handle the data in a different way, like disabling button until author and book title is entered (if book.title && book.author !== "" button.active, something like that).
+Wee need to refine the styling (now we have images inside divs, as opposed to background images of the divs)
 ===*/
