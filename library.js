@@ -40,20 +40,21 @@ let iteration = 0;
 /* ===============  Library Functionality ======================= */
 
 // Book generator
-function Book (title, author, year, numberOfPages, rating, isRead) {
+function Book (title, author, year, numberOfPages, rating, isRead, image) {
   this.title = title;
   this.author = author;
   this.year = year;
   this.numberOfPages = numberOfPages;
   this.rating = rating;
   this.isRead = isRead;
+  this.image = image;
 }
 
 let myLibrary = [];
 
 // Simple example to have dummy data
-let asoiaf = new Book ("A Song of Ice and Fire", "George R.R. Martin", "1992", "1023", "5", "true");
-myLibrary.push(asoiaf)
+let asoiaf = new Book ("A Song of Ice and Fire", "George R.R. Martin", "1992", "1023", "5", "true", "images/got.jpg");
+myLibrary.push(asoiaf);
 
 
 // This is getting access to all the relevant elements
@@ -70,12 +71,19 @@ const bookshelf = document.getElementById("bookshelf");
 
 // This function generates a new element to go in the list of books
 function addBook () {
+  // Return boolean regarding if book has been read
   if (inputRead.checked){
     inputRead.value = true;
   } else {
     inputRead.value = false;
   }
-  let book = new Book (inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, inputRate.value, inputRead.value);
+  // Add default image in case no image is added by user
+  if (inputImage.value === "") {
+    inputImage.value = "https://s3.amazonaws.com/peoplepng/wp-content/uploads/2018/08/20131551/Plain-Book-Transparent-Image.png";
+  }
+  let book = new Book (inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, inputRate.value, inputRead.value, inputImage.value);
+  console.log(book.image)
+  console.log(book.title)
   myLibrary.push(book);
   // to reset it
   cleanInputs();
@@ -105,6 +113,7 @@ function cleanInputs () {
   inputYear.value = "";
   inputPages.value = "";
   inputRate.value = "";
+  inputImage.value = "";
   inputRead.checked = true;
 }
 
@@ -117,8 +126,12 @@ function addElement(){
     const bookDiv = document.createElement("div");
     bookDiv.className = "book";
     bookDiv.innerHTML = content;
-    // const button = document.createElement("button");
-    // bookDiv.appendChild(button);
+    // Create img element and set it as child of bookDiv. Assign a class for styling
+    const bookImage = document.createElement("img");
+    bookImage.className = "book-image";
+    bookImage.src = book.image;
+    bookDiv.appendChild(bookImage);
+        // Append book div to the shelf
     bookshelf.appendChild(bookDiv);
   })
 }
@@ -134,4 +147,5 @@ Now we have the value wired, next we need to display each book in the format Ric
 We will have to create an element for each book in the array to display it and find a way for it to display information when hovering.
 We need to buttons in each book, one to toggle whether is read or not (that can change over time) and the second is to erase the book from the visuals and the library.
 Once we have everything working properly, a cool add-on would be to manage data using localStorage or Firebase (I've used localStorage, frebase no idea).
+HANDLE ERROR IF NO PICTURE
 ===*/
