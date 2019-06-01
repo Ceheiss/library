@@ -87,6 +87,7 @@ function addBook () {
   myLibrary.push(book);
   // to reset it
   cleanInputs();
+  // this function creates some problematic outcomes
   cleanBookshelf();
   printBooks();
   addElement();
@@ -94,10 +95,11 @@ function addBook () {
 };
 
 // This prints a list of books in library
+// This is just to chek that all values can be displayed 
 function printBooks() {
   myLibrary.forEach(function(book){
     if (book.isRead == "true") {
-      temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year}  === HAVE READ IT<br />`
+      temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year} Number of pages: ${book.numberOfPages} rating: ${book.rating}  === HAVE READ IT<br />`
     } else {
       temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year}  ==== NOT READ YET<br />`
     }
@@ -122,10 +124,13 @@ btnInsert.onclick = addBook;
 // Create div element, assign it the "book" class and add the html content. append to bookshelf
 function addElement(){
   myLibrary.forEach(function(book){
-    let content = `Title: ${book.title} Author: ${book.author} Year: ${book.year}`;
+    let content = `Title: ${book.title} <br>Author: ${book.author}<br> Year: ${book.year}`;
     const bookDiv = document.createElement("div");
     bookDiv.className = "book";
-    bookDiv.innerHTML = content;
+    const bookInfo= document.createElement("p");
+    bookInfo.className = "book-info";
+    bookDiv.appendChild(bookInfo);
+    bookInfo.innerHTML = content;
     // Create img element and set it as child of bookDiv. Assign a class for styling
     const bookImage = document.createElement("img");
     bookImage.className = "book-image";
@@ -143,10 +148,11 @@ function cleanBookshelf () {
   } 
 }
 /*=== 
-Now we have the value wired, next we need to display each book in the format Ricardo coded below.
-We will have to create an element for each book in the array to display it and find a way for it to display information when hovering.
-We need to buttons in each book, one to toggle whether is read or not (that can change over time) and the second is to erase the book from the visuals and the library.
-Once we have everything working properly, a cool add-on would be to manage data using localStorage or Firebase (I've used localStorage, frebase no idea).
-Because this is not really a form, we should handle the data in a different way, like disabling button until author and book title is entered (if book.title && book.author !== "" button.active, something like that).
-Wee need to refine the styling (now we have images inside divs, as opposed to background images of the divs)
+1. We need to buttons in each book, one to toggle whether is read or not (that can change over time) and the second is to erase the book from the visuals and the library.
+2. We also need to find a way for it to display information when hovering.
+3. Once we have everything working properly, a cool add-on would be to manage data using localStorage or Firebase (I've used localStorage, firebase no idea).
+4. Because this is not really a form, we should handle the data in a different way, like disabling button until author and book title is entered (if book.title && book.author !== "" button.active, something like that).
+5. We need to refine the styling (now we have images inside divs, as opposed to background images of the divs).
+6. It would be cool to use a star based animation for the rating.
+7. In the future, it would be also cool to have a search bar that filters the books that are displayed based on rating, name or other values.
 ===*/
