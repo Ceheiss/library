@@ -1,5 +1,5 @@
 //On page load functions-----------------------------------------------------------------------------------------------------------------------------------------------------
-// hide div sections in order to load as you scroll down the page.
+// hide div sections in order to load as you scroll down the pageee.
 
 $(document).ready(function(){
     
