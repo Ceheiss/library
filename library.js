@@ -79,10 +79,11 @@ function addBook () {
   }
   // Add default image in case no image is added by user
   if (inputImage.value === "") {
+    inputImage.value = "https://s3.amazonaws.com/peoplepng/wp-content/uploads/2018/08/20131551/Plain-Book-Transparent-Image.png";
   }
-  inputImage.value = "https://s3.amazonaws.com/peoplepng/wp-content/uploads/2018/08/20131551/Plain-Book-Transparent-Image.png";
+ 
   let book = new Book (inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, inputRate.value, inputRead.value, inputImage.value);
-  console.log(book.image)
+  console.log("test:" + book.image)
   console.log(book.title)
   myLibrary.push(book);
   // to reset it
@@ -129,15 +130,13 @@ function addElement(){
     bookDiv.className = "book";
     const bookInfo= document.createElement("p");
     bookInfo.className = "book-info";
-    bookDiv.appendChild(bookInfo);
     bookInfo.innerHTML = content;
-    // Create img element and set it as child of bookDiv. Assign a class for styling
-     //const bookImage = document.createElement("img");
-    //bookImage.className = "book-image";
-    bookDiv.style.backgroundImage = 'url('+ inputImage.value +')';
-    console.log("test: " + inputImage.value);
-    //bookDiv.appendChild(bookImage);
-        // Append book div to the shelf
+    bookDiv.appendChild(bookInfo);
+    
+    // Implemented the background image functionality for each book
+    bookDiv.style.backgroundImage = 'url("'+ book.image +'")';
+    
+    // Append book div to the shelf
     bookshelf.appendChild(bookDiv);
   })
 }

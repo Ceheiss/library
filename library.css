@@ -169,36 +169,31 @@ button, #submit {
 /* Added grid to bookshelf*/
 #bookshelf{
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    width: 90%;
+    margin: 50px auto;
 }
 
 /* Book frame color by odd and even */
 /* Using flex-box to align the items in the parent div */
+
+/* Adjusting the background-positioning and size for each book */
 .book{ 
-  background-color: #c23626;
-  border-radius: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
 }
 
 .book-info {
   color: #eee;
-  width: 70%;
   text-align: center;
 }
 
 .book-image {
   width: 60%;
   height: 80%;
-}
-
-.book:nth-child(1), .book:nth-child(2), .book:nth-child(3), .book:nth-child(4){
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 300px 500px;
 }
 
 .show-book{
