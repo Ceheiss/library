@@ -37,6 +37,117 @@ let iteration = 0;
               }
 });
 
+/* ===============  Library Functionality ======================= */
+
+// Book generator
+function Book (title, author, year, numberOfPages, rating, isRead, image) {
+  this.title = title;
+  this.author = author;
+  this.year = year;
+  this.numberOfPages = numberOfPages;
+  this.rating = rating;
+  this.isRead = isRead;
+  this.image = image;
+}
+
+let myLibrary = [];
+
+// Simple example to have dummy data
+let asoiaf = new Book ("A Song of Ice and Fire", "George R.R. Martin", "1992", "1023", "5", "true", "images/got.jpg");
+myLibrary.push(asoiaf);
+
+
+// This is getting access to all the relevant elements
+const inputTitle = document.getElementById("inp-title");
+const inputAuthor = document.getElementById("inp-author");
+const inputYear = document.getElementById("inp-year");
+const inputPages = document.getElementById("inp-pages");
+const inputRead = document.getElementById("inp-read");
+const inputRate = document.getElementById("inp-rate");
+const inputImage = document.getElementById("inp-image");
+const btnInsert = document.getElementById("btn-insert");
+const temporaryBooks = document.getElementById("temporary-books");
+const bookshelf = document.getElementById("bookshelf");
+
+// This function generates a new element to go in the list of books
+function addBook () {
+  // Return boolean regarding if book has been read
+  if (inputRead.checked){
+    inputRead.value = true;
+  } else {
+    inputRead.value = false;
+  }
+  // Add default image in case no image is added by user
+  if (inputImage.value === "") {
+  }
+  inputImage.value = "https://s3.amazonaws.com/peoplepng/wp-content/uploads/2018/08/20131551/Plain-Book-Transparent-Image.png";
+  let book = new Book (inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, inputRate.value, inputRead.value, inputImage.value);
+  console.log(book.image)
+  console.log(book.title)
+  myLibrary.push(book);
+  // to reset it
+  cleanInputs();
+  // this function creates some problematic outcomes
+  cleanBookshelf();
+  printBooks();
+  addElement();
+  return myLibrary;
+};
+
+// This prints a list of books in library
+// This is just to chek that all values can be displayed 
+function printBooks() {
+  myLibrary.forEach(function(book){
+    if (book.isRead == "true") {
+      temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year} Number of pages: ${book.numberOfPages} rating: ${book.rating}  === HAVE READ IT<br />`
+    } else {
+      temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year}  ==== NOT READ YET<br />`
+    }
+  })
+}
+
+// This function is to clean the input boxes without refreshing the page
+// and also erase previous list so it's no replicated constantly
+function cleanInputs () {
+  temporaryBooks.innerHTML = "";
+  inputTitle.value = "";
+  inputAuthor.value = "";
+  inputYear.value = "";
+  inputPages.value = "";
+  inputRate.value = "";
+  inputImage.value = "";
+  inputRead.checked = true;
+}
+
+btnInsert.onclick = addBook;
+
+// Create div element, assign it the "book" class and add the html content. append to bookshelf
+function addElement(){
+  myLibrary.forEach(function(book){
+    let content = `Title: ${book.title} <br>Author: ${book.author}<br> Year: ${book.year}`;
+    const bookDiv = document.createElement("div");
+    bookDiv.className = "book";
+    const bookInfo= document.createElement("p");
+    bookInfo.className = "book-info";
+    bookDiv.appendChild(bookInfo);
+    bookInfo.innerHTML = content;
+    // Create img element and set it as child of bookDiv. Assign a class for styling
+     //const bookImage = document.createElement("img");
+    //bookImage.className = "book-image";
+    bookDiv.style.backgroundImage = 'url('+ inputImage.value +')';
+    console.log("test: " + inputImage.value);
+    //bookDiv.appendChild(bookImage);
+        // Append book div to the shelf
+    bookshelf.appendChild(bookDiv);
+  })
+}
+
+// Destroys all elements that are child of bookshelf (all books)
+function cleanBookshelf () {
+  while (bookshelf.firstChild) {
+    bookshelf.removeChild(bookshelf.firstChild);
+  } 
+}
 
 
 /*=== 
