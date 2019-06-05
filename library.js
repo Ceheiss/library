@@ -24,7 +24,7 @@ let iteration = 0;
 		// Added this variable as a control method as somethimes the offset().top was set to 0 randomly and would conflict with scrollTop, because scrollTop > 0
 		if($('#bookshelf').offset().top !=0){
             // When scrolltop is bigger than bookshelf heigh - 750, trigger animation
-			if(scrollTop > $('#bookshelf').offset().top + $('#bookshelf').height()-1000 ){ 	 
+			if(scrollTop > $('#bookshelf').offset().top + $('#bookshelf').height()-1500 ){ 	 
                     //loop through booklist array
 					bookList.forEach(function(book){
 	            		// had a delay with setTimeout function in order to load pictures to the page with a sligth delay

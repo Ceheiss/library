@@ -189,17 +189,40 @@ button, #submit {
 /* Book frame color by odd and even */
 /* Using flex-box to align the items in the parent div */
 
-/* Adjusting the background-positioning and size for each book */
+
+
 .book{ 
+  /* Position relative to serve as reference to .book-info */
+  position:relative;
+  /* Adjusting the background-positioning and size for each book */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
- 
-}
+  /* Added overflow hidden to hide where the description will go */
+  overflow: hidden;
+ }
 
 .book-info {
+  
+  /* Position absolute that will move RELATIVE to .book
+  Also hidden the .book-info with bottom: -157px */
+  position: absolute;
+  bottom: -157px;
+  width: 100%;
+
   color: #eee;
   text-align: center;
+  background-color: rgba(0,0,0,0.5);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  transition: all 0.3s ease-in;
+}
+
+ /* On hover over .book, trigger animation and make .book-info slide back up */
+.book:hover .book-info{
+    bottom: 0;
 }
 
 .book-image {
