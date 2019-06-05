@@ -123,7 +123,7 @@ input:focus{outline:none;}
 #label-placement{ margin-top:30px !important;}
 
 /* Margin to submit button */
-#btn-insert{ margin-top:30px; margin-bottom: 30px; }
+#btn-insert{ margin-top:30px; margin-bottom: 30px; text-transform: uppercase;}
 
 
 /* Button's style */
@@ -212,7 +212,7 @@ button, #submit {
 
   color: #eee;
   text-align: center;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.7);
   padding-top: 50px;
   padding-bottom: 50px;
   margin-top: 0px;
