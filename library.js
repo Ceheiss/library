@@ -52,11 +52,6 @@ function Book (title, author, year, numberOfPages, rating, isRead, image) {
 
 let myLibrary = [];
 
-// Simple example to have dummy data
-let asoiaf = new Book ("A Song of Ice and Fire", "George R.R. Martin", "1992", "1023", "5", "true", "images/got.jpg");
-myLibrary.push(asoiaf);
-
-
 // This is getting access to all the relevant elements
 const inputTitle = document.getElementById("inp-title");
 const inputAuthor = document.getElementById("inp-author");
