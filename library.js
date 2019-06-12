@@ -78,8 +78,6 @@ function addBook () {
   }
  
   let book = new Book (inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, inputRate.value, inputRead.value, inputImage.value);
-  console.log("test:" + book.image)
-  console.log(book.title)
   myLibrary.push(book);
   // to reset it
   cleanInputs();
@@ -88,6 +86,12 @@ function addBook () {
   addElement();
   return myLibrary;
 };
+
+// Prevent default behaviour when clicking the submit btn and call function add book
+btnInsert.addEventListener('click', function(e){
+	e.preventDefault();
+	addBook();
+});
 
 
 // This function is to clean the input boxes without refreshing the page
@@ -103,10 +107,6 @@ function cleanInputs () {
   inputRead.checked = true;
 }
 
-btnInsert.addEventListener('click', function(e){
-	e.preventDefault();
-	addBook();
-});
 
 // Create div element, assign it the "book" class and add the html content. append to bookshelf
 function addElement(){
