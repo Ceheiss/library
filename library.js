@@ -85,7 +85,6 @@ function addBook () {
   cleanInputs();
   // this function creates some problematic outcomes
   cleanBookshelf();
-  printBooks();
   addElement();
   return myLibrary;
 };
@@ -104,7 +103,10 @@ function cleanInputs () {
   inputRead.checked = true;
 }
 
-btnInsert.onclick = addBook;
+btnInsert.addEventListener('click', function(e){
+	e.preventDefault();
+	addBook();
+});
 
 // Create div element, assign it the "book" class and add the html content. append to bookshelf
 function addElement(){
