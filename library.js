@@ -125,7 +125,7 @@ btnInsert.onclick = addBook;
 // Create div element, assign it the "book" class and add the html content. append to bookshelf
 function addElement(){
   myLibrary.forEach(function(book){
-    let content = `Title: ${book.title} <br>Author: ${book.author}<br> Year: ${book.year}`;
+    let content = `Title: ${book.title} <br> Author: ${book.author} <br> Year: ${book.year} <br> Number of pages: ${book.numberOfPages} <br> rating: ${book.rating}  <br>  HAVE READ IT<br />`;
     const bookDiv = document.createElement("div");
     bookDiv.className = "book";
     const bookInfo= document.createElement("p");
