@@ -64,6 +64,9 @@ const btnInsert = document.getElementById("btn-insert");
 const temporaryBooks = document.getElementById("temporary-books");
 const bookshelf = document.getElementById("bookshelf");
 
+var getFormItems = document.querySelectorAll(".form-items");
+
+
 // This function generates a new element to go in the list of books
 function addBook () {
   // Return boolean regarding if book has been read
@@ -94,6 +97,19 @@ btnInsert.addEventListener('click', function(e){
 });
 
 
+/* Disable submit button if inputs aren't checked */
+for(var i = 0; i < getFormItems.length; i++){
+	getFormItems[i].addEventListener('input', function(e){
+		if(getFormItems[0].value != "" && getFormItems[1].value != ""){
+		   btnInsert.removeAttribute("disabled");
+		   console.log(getFormItems[i]);
+		}
+	});
+}
+
+
+
+
 // This function is to clean the input boxes without refreshing the page
 // and also erase previous list so it's no replicated constantly
 function cleanInputs () {
@@ -106,6 +122,7 @@ function cleanInputs () {
   inputImage.value = "";
   inputRead.checked = true;
 }
+
 
 
 // Create div element, assign it the "book" class and add the html content. append to bookshelf
