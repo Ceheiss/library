@@ -207,7 +207,7 @@ button, #btn-insert {
   /* Position absolute that will move RELATIVE to .book
   Also hidden the .book-info with bottom: -157px */
   position: absolute;
-  bottom: -157px;
+  bottom: -214px;
   width: 100%;
 
   color: #eee;
