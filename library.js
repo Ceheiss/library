@@ -90,17 +90,6 @@ function addBook () {
   return myLibrary;
 };
 
-// This prints a list of books in library
-// This is just to chek that all values can be displayed 
-function printBooks() {
-  myLibrary.forEach(function(book){
-    if (book.isRead == "true") {
-      temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year} Number of pages: ${book.numberOfPages} rating: ${book.rating}  === HAVE READ IT<br />`
-    } else {
-      temporaryBooks.innerHTML += `Title: ${book.title} Author: ${book.author} Year: ${book.year}  ==== NOT READ YET<br />`
-    }
-  })
-}
 
 // This function is to clean the input boxes without refreshing the page
 // and also erase previous list so it's no replicated constantly
