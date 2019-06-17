@@ -24,53 +24,41 @@
 
     <!-- Slide toogle button-->
     <div id="container">
-            <button id="new-book">NEW BOOK</button>
+        <button id="new-book">NEW BOOK</button>
              <!-- form-->
-            <div id="form"> 
-                    <h3> Insert Book details</h3>
-                    <form id="insert-book">
-                        <p>
-                            <label for="title">Title</label>
-                        </p>
-                        <p>
-                            <input type="text" name="title" class="form-items" id="title" required>
-                        </p>
-                         <p>
-                            <label for="author">Author</label> 
-                        </p>
-                        <p>
-                            <input type="text" name="author" class="form-items" id="author" required>
-                        </p>
-                        <p>  
-                            <label for="year">Year </label> 
-                        </p>
-                        <p>
-                            <input type ="number" class="form-items" id="year">
-                        </p>
-                        <p>
-                            <label for="read-it">Read it already?</label> 
-                        </p>
-                        <p>
-                            <input type="boolean" name="read-it" class="form-items" id="read-it" required placeholder="yes or no">
-                        </p>
-                        <p>
-                            <label for="rating">Rating</label> 
-                        </p>
-                        <p>
-                            <input type="text" name="rating" class="form-items" id=rating required>
-                        </p>
-                        <p>
-                            <input id="submit" type="submit" value="ADD BOOK">
-                         </p>
-                </form>   
-        </div>
+          <form id="form">
+            <h3>Add a book</h3>
+            <div  id="insert-book">
+              <div>
+                <input id="inp-title" type="text" placeholder="enter book title" class="form-items" required>
+              </div>
+              <div>
+                <input id="inp-author" type="text" placeholder="enter book author" class="form-items" required>
+              </div>
+              <div>
+                <input id="inp-year" type="number" placeholder="enter year" class="form-items">
+              </div>
+              <div>
+                <input id="inp-pages" type="number" placeholder="number of pages" class="form-items">
+              </div>
+             <div>
+                <input id="inp-rate" type="number" placeholder="rate it" class="form-items" min="1" max="5" required> 
+             </div>
+             <div>
+              <input id="inp-image" type="text" placeholder="enter book image url" class="form-items">
+             </div>
+             <div class="form-items" id="label-placement">
+              <input class="form-items" type="checkbox" id="inp-read" name="read"
+                       checked>
+              <label for="inp-read" id="text-label">I have read the book</label>
+              </div>
+              <input type="button" id="btn-insert" disabled value="Add Book" >
+            </div>
+          </form>
              <h3> Your Books: </h3>
+             <p id="temporary-books"></p>
             <!-- Bookshelf display-->
-            <div id="bookshelf">  
-                <div class="book"></div>
-                <div class="book"></div>  
-                <div class="book"></div> 
-                <div class="book"></div>       
+            <div id="bookshelf">     
             </div>
    </div>
    
@@ -78,3 +66,4 @@
 <script src='library.js'></script> 
 </body>
 </html>
+
