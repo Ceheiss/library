@@ -123,7 +123,18 @@ function cleanInputs () {
   inputRead.checked = true;
 }
 
-
+// Check size
+function resizeBooks() {
+  let displayedBooks = document.getElementsByClassName("book");
+  const displayedBooksArray = Array.from(displayedBooks)
+  console.log(typeof displayedBooksArray)
+  console.log(typeof displayedBooks)
+  if (myLibrary.length <= 2) {
+    displayedBooksArray.forEach(function(book){
+      return book.style.width = "400px";
+    })
+  }
+}
 
 // Create div element, assign it the "book" class and add the html content. append to bookshelf
 function addElement(){
@@ -142,7 +153,9 @@ function addElement(){
     // Append book div to the shelf
     bookshelf.appendChild(bookDiv);
   })
+  resizeBooks();
 }
+
 
 // Destroys all elements that are child of bookshelf (all books)
 function cleanBookshelf () {
